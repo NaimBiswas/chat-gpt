@@ -1,23 +1,57 @@
-import logo from './logo.svg';
 import './App.css';
+import ChatTitle from './components/ChatTitle/ChatTitle';
+import LeftSideBarBottom from './components/LeftSideBarBottom/LeftSideBarBottom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="chat-gpt d-flex bg-dark">
+        <div className="left-sidebar px-3">
+          <div className='top-text'>
+            <text className="new-chat"><i class="fas fa-plus"></i> New Chat</text>
+          </div>
+          <div className="left-sidebar-top">
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+            <ChatTitle Title="Chat Title"/>
+          </div>
+          <hr className="text-primary" />
+          <div className="left-sidebar-bottom">
+            <LeftSideBarBottom IconName='fa-solid fa-trash-can' Text='Clear conversations'/>
+            <LeftSideBarBottom IconName='fa-solid fa-circle-half-stroke' Text='Change Theme'/>
+            <LeftSideBarBottom IconName='far fa-wrench' Text='Updates & FAQ'/>
+            <LeftSideBarBottom IconName='fas fa-sign-out' Text='Login'/>
+          </div>
+        </div>
+        <div className="right-sidebar">
+          <h2 className='text-success'>right side bar</h2>
+          <div className="chat-body"></div>
+          <div className="bottom-input">{/* <input type="text" /> */}</div>
+        </div>
+      </div>
     </div>
   );
 }

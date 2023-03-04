@@ -1,38 +1,56 @@
-.App {
-  text-align: center;
+.chat-gpt{
+    max-height: 100vh;
+    height: 100vh;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.left-sidebar{
+    background-color: #012E40;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.left-sidebar-top{
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    height: 60vh;
+    min-height: 60vh;
+    margin-right: 20px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.left-sidebar-bottom{
+    overflow: hidden;
 }
-
-.App-link {
-  color: #61dafb;
+.top-text{
+    border: 1px solid gray;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.top-text:hover{
+    opacity: .9;
+}
+.new-chat{
+    padding: 5px;
+    color: gray;
+    padding-left: 15px;
+}
+.new-chat i{
+    margin-right: 5px;
+}
+.textLeft{
+    font-size: 15px;
+    color:aliceblue ;
+    cursor: pointer;
+}
+.chatTitle{
+    padding-left: 5px;
+    color:aliceblue ;
+    cursor: pointer;
+}
+.textLeft:hover{
+    opacity: .8;
+}
+.chatTitle:hover{
+    opacity: .8;
+}
+.chatTitle i {
+    margin-right: 10px;
+    font-size: 15px;
 }
