@@ -5,9 +5,15 @@ body {
 .right-sidebar {
     overflow-y: auto;
     width: 88%!important;
-    overflow-x: hidden;
+    overflow: hidden;
     position: relative;
 }
+.chat-body{
+    overflow-y: auto;
+    height: 90vh;
+    overflow-x: hidden;
+}
+
 .chat-gpt {
     max-height: 100vh;
     height: 100vh;
@@ -59,7 +65,7 @@ body {
 
 .new-chat {
     padding: 5px;
-    color: gray;
+    color: #f1f1f1d1;
     padding-left: 15px;
 }
 
@@ -144,7 +150,25 @@ body {
     color: #f0f8ffa3;
 
 }
-/* .chat-body::-webkit-scrollbar {
+.messageBody{
+    padding-left: 50px;
+    padding-top: 20px;
+}
+.useImage{
+    width: 60%;
+}
+.useImage img {
+    margin-top: 10px;
+    border-radius: 50px;
+}
+.message p {
+    text-align: left;
+    font-size: 16px;
+    margin-top: 15px;
+    color: aliceblue;
+
+}
+.chat-body::-webkit-scrollbar {
     width: 7px;
 }
 
@@ -153,6 +177,6 @@ body {
 }
 
 .chat-body::-webkit-scrollbar-thumb {
-    background-color: #ffffff;
+    background-color: #024959;
     border-radius: 25px;
-} */
+}

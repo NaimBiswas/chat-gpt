@@ -1,19 +1,27 @@
 import { useState } from 'react';
 import './App.css';
 import ChatTitle from './components/ChatTitle/ChatTitle';
+import HomePageDefaultView from './components/HomePageDefaultView/HomePageDefaultView';
 import LeftSideBarBottom from './components/LeftSideBarBottom/LeftSideBarBottom';
-import VerticalIconWithHeader from './components/VerticalIconWithHeader/VerticalIconWithHeahder';
+
 
 function App() {
   const [inputValue, setInputValue] = useState('');
+  const [isShowMessageBody, setIsShowMessageBody] = useState(true);
+  const [valueArray,] = useState([])
+  const [isChatGPT, setIsChatGPT] = useState(false);
   const onSubmit = () => {
-    console.log('>>>>>>>>>>>', "Submited", inputValue)
+    valueArray.push( {message:inputValue, value:''})
+    console.log('>>>>>>>>>>>', valueArray)
+    setInputValue('')
+    setIsShowMessageBody(false)
+    // api call will be there
   }
   return (
     <div className="App">
       <div className="chat-gpt d-flex ">
         <div className="left-sidebar px-3">
-          <div className='top-text'>
+          <div onClick={() => setIsShowMessageBody(true)} className='top-text'>
             <span className="new-chat"><i className="fas fa-plus"></i> New Chat</span>
           </div>
           <div className="left-sidebar-top">
@@ -30,33 +38,45 @@ function App() {
         </div>
         <div className="right-sidebar bg-dark">
           <div className="chat-body">
-            <div className=''>
-              <h2 className='text-center text-danger chatGPtText'>ChatGPT</h2>
-              <div className='row d-flex justify-content-center'>
-              <div className='verticalIconWithTitle justify-content-center d-flex col-2 col-lg-3 p-0 col-md-3 col-sm-12'>
-                  <VerticalIconWithHeader IsParagraph={false} IconName='far fa-smile-beam' Title='Examples' />
-                  <VerticalIconWithHeader IsParagraph={true} IconName='' Title='Explain quantum computing in simple terms' />
-                  <VerticalIconWithHeader IsParagraph={true} IconName='' Title='Explain quantum computing in simple terms' />
-                  <VerticalIconWithHeader IsParagraph={true} IconName='' Title='Explain quantum computing in simple terms' />
+            {
+              isShowMessageBody?
+                <HomePageDefaultView/>:
+              <div className='pt-5'>
+                  {
+                    valueArray?.map((value, index) => (
+                      <>
+                      <div className='messageBody d-flex justify-content-center'>
+                        <div className='useImage d-flex'>
+                          <img height={40} width={40}  src='https://avatars.githubusercontent.com/u/67551591?v=4' alt="User" />
+                          <div className='message'>
+                            <p className='p-4 pt-0'>{value.message}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className='messageBody pt-0 d-flex justify-content-center'>
+                        <div className='useImage d-flex'>
+                          <img height={40} width={40}  src="/image/chatGPT.png" alt="User" />
+                          <div className='message'>
+                            <p className='p-4 pt-0'>{value.value} Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s, when an unknown printer took a galley of type and scrambled it to
+                            make a type specimen book. It has survived not only five centuries, but
+                            also the leap into electronic typesetting, remaining essentially
+                            unchanged. It was popularised in the 1960s with the release of Letraset
+                            sheets containing Lorem Ipsum passages, and more recently with desktop
+                            publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
+                          </div>
+                        </div>
+                      </div>
+                      </>
+                    ))
+                  } 
               </div>
-              <div className='verticalIconWithTitle justify-content-center d-flex col-2 col-lg-3 p-0 col-md-3 col-sm-12'>
-                <VerticalIconWithHeader IsParagraph={false} IconName='fas fa-yin-yang' Title='Capabilities' />
-                <VerticalIconWithHeader IsParagraph={true} IconName='' Title='Got any creative ideas for a 10 year old’s birthday?' />
-                <VerticalIconWithHeader IsParagraph={true} IconName='' Title='Got any creative ideas for a 10 year old’s birthday?' />
-                <VerticalIconWithHeader IsParagraph={true} IconName='' Title='Got any creative ideas for a 10 year old’s birthday?' />
-              </div>
-              <div className='verticalIconWithTitle justify-content-center d-flex col-2 col-lg-3 p-0 col-md-3 col-sm-12'>
-                <VerticalIconWithHeader IsParagraph={false} IconName='fas fa-exclamation-triangle' Title='Limitations' />
-                <VerticalIconWithHeader IsParagraph={true} IconName='' Title='How do I make an HTTP request in Javascript?' />
-                <VerticalIconWithHeader IsParagraph={true} IconName='' Title='How do I make an HTTP request in Javascript?' />
-                <VerticalIconWithHeader IsParagraph={true} IconName='' Title='How do I make an HTTP request in Javascript?' />
-              </div>
-              </div>
-            </div>
+            }
             <div className="bottom-input text-center mt-5">
               <div className='position'>
                <form onSubmit={(e)=>{e.preventDefault(); onSubmit() }}>
-                  <input rows={1} onChange={(e) => setInputValue(e.target.value)} className='p-2' ></input>
+                  <input value={inputValue} rows={1} onChange={(e) => setInputValue(e.target.value)} className='p-2' ></input>
                   <span className='sendMessage'><i onClick={onSubmit} className="fas fa-paper-plane"></i></span>
                </form>
               </div>
