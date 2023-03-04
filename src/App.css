@@ -125,17 +125,23 @@ body {
 
 }
 
-.bottom-input textarea {
+.bottom-input input {
     width: 90%;
     border-radius: 5px;
-    height: 90px;
     outline: #012E40;
+    background-color: #012e407a;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0px 2px 9px #026773ab;
 }
 .sendMessage{
     position: absolute;
     right: 6%;
-    bottom: 15%;
+    bottom: 22%;
     cursor: pointer;
+    rotate: 42deg;
+    color: #f0f8ffa3;
 
 }
 /* .chat-body::-webkit-scrollbar {

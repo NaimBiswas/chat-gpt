@@ -1,9 +1,14 @@
+import { useState } from 'react';
 import './App.css';
 import ChatTitle from './components/ChatTitle/ChatTitle';
 import LeftSideBarBottom from './components/LeftSideBarBottom/LeftSideBarBottom';
 import VerticalIconWithHeader from './components/VerticalIconWithHeader/VerticalIconWithHeahder';
 
 function App() {
+  const [inputValue, setInputValue] = useState('');
+  const onSubmit = () => {
+    console.log('>>>>>>>>>>>', "Submited", inputValue)
+  }
   return (
     <div className="App">
       <div className="chat-gpt d-flex ">
@@ -19,7 +24,7 @@ function App() {
           <div className="left-sidebar-bottom">
             <LeftSideBarBottom IconName='fa-solid fa-trash-can' Text='Clear conversations'/>
             <LeftSideBarBottom IconName='fa-solid fa-circle-half-stroke' Text='Change Theme'/>
-            <LeftSideBarBottom IconName='far fa-wrench' Text='Updates & FAQ'/>
+            <LeftSideBarBottom IconName='fa-solid fa-wrench' Text='Updates & FAQ'/>
             <LeftSideBarBottom IconName='fas fa-sign-out' Text='Login'/>
           </div>
         </div>
@@ -50,8 +55,10 @@ function App() {
             </div>
             <div className="bottom-input text-center mt-5">
               <div className='position'>
-                <textarea  className='p-2' ></textarea>
-                <span className='sendMessage text-success'><i className="fas fa-paper-plane"></i></span>
+               <form onSubmit={(e)=>{e.preventDefault(); onSubmit() }}>
+                  <input rows={1} onChange={(e) => setInputValue(e.target.value)} className='p-2' ></input>
+                  <span className='sendMessage'><i onClick={onSubmit} className="fas fa-paper-plane"></i></span>
+               </form>
               </div>
             </div>
           </div>
