@@ -1,21 +1,43 @@
-.chat-gpt{
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden
+  }
+.chat-gpt {
     max-height: 100vh;
     height: 100vh;
 }
-.left-sidebar{
+
+.left-sidebar {
     background-color: #012E40;
 }
-.left-sidebar-top{
+
+.left-sidebar-top {
     overflow-y: auto;
     scroll-behavior: smooth;
     height: 60vh;
     min-height: 60vh;
-    margin-right: 20px;
 }
-.left-sidebar-bottom{
+
+.left-sidebar-top::-webkit-scrollbar {
+    width: 7px;
+}
+
+.left-sidebar-top::-webkit-scrollbar-track {
+    background: transparent;
+    /* color of the tracking area */
+}
+
+.left-sidebar-top::-webkit-scrollbar-thumb {
+    background-color: #024959;
+    border-radius: 25px;
+}
+
+.left-sidebar-bottom {
     overflow: hidden;
 }
-.top-text{
+
+.top-text {
     border: 1px solid gray;
     margin-top: 10px;
     padding: 5px;
@@ -23,33 +45,41 @@
     cursor: pointer;
     margin-bottom: 10px;
 }
-.top-text:hover{
+
+.top-text:hover {
     opacity: .9;
 }
-.new-chat{
+
+.new-chat {
     padding: 5px;
     color: gray;
     padding-left: 15px;
 }
-.new-chat i{
+
+.new-chat i {
     margin-right: 5px;
 }
-.textLeft{
+
+.textLeft {
     font-size: 15px;
-    color:aliceblue ;
+    color: aliceblue;
     cursor: pointer;
 }
-.chatTitle{
+
+.chatTitle {
     padding-left: 5px;
-    color:aliceblue ;
+    color: aliceblue;
     cursor: pointer;
 }
-.textLeft:hover{
+
+.textLeft:hover {
     opacity: .8;
 }
-.chatTitle:hover{
+
+.chatTitle:hover {
     opacity: .8;
 }
+
 .chatTitle i {
     margin-right: 10px;
     font-size: 15px;

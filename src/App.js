@@ -21,22 +21,6 @@ function App() {
             <ChatTitle Title="Chat Title"/>
             <ChatTitle Title="Chat Title"/>
             <ChatTitle Title="Chat Title"/>
-            <ChatTitle Title="Chat Title"/>
-            <ChatTitle Title="Chat Title"/>
-            <ChatTitle Title="Chat Title"/>
-            <ChatTitle Title="Chat Title"/>
-            <ChatTitle Title="Chat Title"/>
-            <ChatTitle Title="Chat Title"/>
-            <ChatTitle Title="Chat Title"/>
-            <ChatTitle Title="Chat Title"/>
-            <ChatTitle Title="Chat Title"/>
-            <ChatTitle Title="Chat Title"/>
-            <ChatTitle Title="Chat Title"/>
-            <ChatTitle Title="Chat Title"/>
-            <ChatTitle Title="Chat Title"/>
-            <ChatTitle Title="Chat Title"/>
-            <ChatTitle Title="Chat Title"/>
-            <ChatTitle Title="Chat Title"/>
           </div>
           <hr className="text-primary" />
           <div className="left-sidebar-bottom">
