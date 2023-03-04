@@ -15,7 +15,7 @@ body {
 
 .left-sidebar {
     background-color: #012E40;    
-    flex: 1 0 10%;
+    flex: 1 0 16%;
 }
 
 .left-sidebar-top {
@@ -41,6 +41,7 @@ body {
 
 .left-sidebar-bottom {
     overflow: hidden;
+    align-self: flex-end;
 }
 
 .top-text {
