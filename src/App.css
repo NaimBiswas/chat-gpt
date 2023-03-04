@@ -1,15 +1,21 @@
-html, body {
-    margin: 0;
-    height: 100%;
-    overflow: hidden
-  }
+body {
+    overflow: hidden;
+    height: 100vh;
+}
+.right-sidebar {
+    overflow-y: auto;
+    width: 88%!important;
+    overflow-x: hidden;
+    position: relative;
+}
 .chat-gpt {
     max-height: 100vh;
     height: 100vh;
 }
 
 .left-sidebar {
-    background-color: #012E40;
+    background-color: #012E40;    
+    flex: 1 0 10%;
 }
 
 .left-sidebar-top {
@@ -79,8 +85,67 @@ html, body {
 .chatTitle:hover {
     opacity: .8;
 }
-
+.verticalIconWithTitle{
+    flex-direction: column;
+    align-items: center;
+}
 .chatTitle i {
     margin-right: 10px;
     font-size: 15px;
 }
+.body-middle{
+}
+.chatGPtText{
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+.paragraph{
+    background: #026773;
+    padding: 9px;
+    border-radius: 5px;
+    width: fit-content;
+    max-width: 260px;
+    text-align: center;
+    color: rgb(197, 199, 201);
+}
+.pgText{
+    font-size: 14px;
+    letter-spacing: .5px;
+}
+.headerTitle{
+    font-size: 17px;
+    color: aliceblue;
+    letter-spacing: 1px;
+}
+.bottom-input{
+    position: absolute;
+    width: 100%;
+    bottom: 30px;
+
+}
+
+.bottom-input textarea {
+    width: 90%;
+    border-radius: 5px;
+    height: 90px;
+    outline: #012E40;
+}
+.sendMessage{
+    position: absolute;
+    right: 6%;
+    bottom: 15%;
+    cursor: pointer;
+
+}
+/* .chat-body::-webkit-scrollbar {
+    width: 7px;
+}
+
+.chat-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-body::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 25px;
+} */

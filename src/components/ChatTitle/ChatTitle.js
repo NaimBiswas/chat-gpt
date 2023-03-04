@@ -1,7 +1,10 @@
 function ChatTitle ({Title}) {
     return(
         <div className="mb-2">
-            <text className="textLeft chatTitle"><i class="fas fa-comments"></i> {Title}</text>
+            {Title.length}
+            <span className="textLeft chatTitle"><i className="fas fa-comments "></i> 
+                {Title && Title?.length > 15? Title.substring(0,15) + '...': Title}
+            </span>
         </div>
     )
 }
