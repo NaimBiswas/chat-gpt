@@ -161,11 +161,24 @@ body {
     margin-top: 10px;
     border-radius: 50px;
 }
+.message{
+    background: #012e407a;
+    width: 100%;
+    margin-left: 10px;
+    border-radius: 7px;
+    box-shadow: 0px 1px 9px 1px rgb(82 73 73 / 72%);
+    height: fit-content;
+    width: fit-content;
+    margin-bottom: 15px;
+}
 .message p {
     text-align: left;
     font-size: 16px;
     margin-top: 15px;
     color: aliceblue;
+    padding: 0!important;
+    padding-left: 10px!important;
+    padding-right: 10px!important;
 
 }
 .chat-body::-webkit-scrollbar {

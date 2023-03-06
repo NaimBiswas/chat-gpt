@@ -8,11 +8,11 @@ import LeftSideBarBottom from './components/LeftSideBarBottom/LeftSideBarBottom'
 function App() {
   const [inputValue, setInputValue] = useState('');
   const [isShowMessageBody, setIsShowMessageBody] = useState(true);
-  const [valueArray,] = useState([])
-  const [isChatGPT, setIsChatGPT] = useState(false);
+  const [valueArray,setArrayValue] = useState([])
+  // const [isChatGPT, setIsChatGPT] = useState(false);
   const onSubmit = () => {
-    valueArray.push( {message:inputValue, value:''})
-    console.log('>>>>>>>>>>>', valueArray)
+    setArrayValue((pre) => [...pre, {user:'me', value:inputValue}])
+    setArrayValue((pre) => [...pre, {user:'robot', value:"I am doing good  from robot, Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but  also the leap into electronic typesetting, remaining essentially  unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."}]);
     setInputValue('')
     setIsShowMessageBody(false)
     // api call will be there
@@ -44,31 +44,17 @@ function App() {
               <div className='pt-5'>
                   {
                     valueArray?.map((value, index) => (
-                      <>
-                      <div className='messageBody d-flex justify-content-center'>
+                      <div key={index}>
+                      <div className={value.user === 'robot'? 'pt-0 bgForRobot messageBody d-flex justify-content-center' : 'messageBody d-flex justify-content-center'}>
                         <div className='useImage d-flex'>
-                          <img height={40} width={40}  src='https://avatars.githubusercontent.com/u/67551591?v=4' alt="User" />
+                          <img height={40} width={40}  src={value.user === 'me'?
+                          'https://avatars.githubusercontent.com/u/67551591?v=4':"/image/chatGPT.png"} alt="User" />
                           <div className='message'>
-                            <p className='p-4 pt-0'>{value.message}</p>
+                            <p className='p-4 pt-0'>{value.value}</p>
                           </div>
                         </div>
                       </div>
-                      <div className='messageBody pt-0 d-flex justify-content-center'>
-                        <div className='useImage d-flex'>
-                          <img height={40} width={40}  src="/image/chatGPT.png" alt="User" />
-                          <div className='message'>
-                            <p className='p-4 pt-0'>{value.value} Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the
-                            1500s, when an unknown printer took a galley of type and scrambled it to
-                            make a type specimen book. It has survived not only five centuries, but
-                            also the leap into electronic typesetting, remaining essentially
-                            unchanged. It was popularised in the 1960s with the release of Letraset
-                            sheets containing Lorem Ipsum passages, and more recently with desktop
-                            publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
-                          </div>
-                        </div>
                       </div>
-                      </>
                     ))
                   } 
               </div>
