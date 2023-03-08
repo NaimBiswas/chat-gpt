@@ -9,6 +9,7 @@ function App() {
   const [inputValue, setInputValue] = useState('');
   const [isShowMessageBody, setIsShowMessageBody] = useState(true);
   const [valueArray,setArrayValue] = useState([])
+  const [isThemeChange, setIsThemeChange] = useState(true);
   // const [isChatGPT, setIsChatGPT] = useState(false);
   const onSubmit = () => {
     setArrayValue((pre) => [...pre, {user:'me', value:inputValue}])
@@ -16,6 +17,9 @@ function App() {
     setInputValue('')
     setIsShowMessageBody(false)
     // api call will be there
+  }
+  const onColorChange = (isChanged) => {
+    setIsThemeChange(isChanged)
   }
   return (
     <div className="App">
@@ -31,12 +35,12 @@ function App() {
           <hr className="text-primary" />
           <div className="left-sidebar-bottom">
             <LeftSideBarBottom IconName='fa-solid fa-trash-can' Text='Clear conversations'/>
-            <LeftSideBarBottom IconName='fa-solid fa-circle-half-stroke' Text='Change Theme'/>
+            <LeftSideBarBottom  returnFunc={onColorChange} IconName='fa-solid fa-circle-half-stroke' Text='Change Theme'/>
             <LeftSideBarBottom IconName='fa-solid fa-wrench' Text='Updates & FAQ'/>
             <LeftSideBarBottom IconName='fas fa-sign-out' Text='Login'/>
           </div>
         </div>
-        <div className="right-sidebar bg-dark">
+        <div className={isThemeChange?"right-sidebar right-sidebarOnChange": 'bg-dark right-sidebar'}>
           <div className="chat-body">
             {
               isShowMessageBody?
