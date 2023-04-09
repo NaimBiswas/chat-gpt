@@ -1,6 +1,8 @@
 body {
     overflow: hidden;
     height: 100vh;
+}
+.AppLight{
     background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgb(0, 155, 121) 0.1%, rgba(100, 0, 120, 0.767) 94.2% );
 }
 .right-sidebar {
@@ -8,7 +10,8 @@ body {
     width: 88%!important;
     overflow: hidden;
     position: relative;
-    
+    margin: 15px;
+    padding: 20px;
 }
 .right-sidebarOnChange{
     color: #fff;
@@ -178,6 +181,14 @@ body {
 .useImage img {
     margin-top: 10px;
     border-radius: 50px;
+}
+.floating{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.textGreen{
+    color: #00d300!important;   
 }
 .message{
     background: #012e407a;
