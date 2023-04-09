@@ -3,7 +3,7 @@ import VerticalIconWithHeader from '../VerticalIconWithHeader/VerticalIconWithHe
 const HomePageDefaultView = ()  => {
     return(
         <div className=''>
-              <h2 className='text-center text-danger chatGPtText'>ChatGPT</h2>
+              <h2 className='text-center text-danger chatGPtText'>ChatBOT</h2>
               <div className='row d-flex justify-content-center'>
               <div className='verticalIconWithTitle justify-content-center d-flex col-2 col-lg-3 p-0 col-md-3 col-sm-12'>
                   <VerticalIconWithHeader IsParagraph={false} IconName='far fa-smile-beam' Title='Examples' />
